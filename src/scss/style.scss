@@ -1,4 +1,5 @@
 @import "vanilla-framework/scss/vanilla";
+@import "variables";
 @include vanilla;
 
 body {
@@ -10,10 +11,10 @@ body {
 	 */
 	div.blog-item-p-card {
 		border-radius: 3px;
-		border-top: 3px solid #A182A0;
+		border-top: 3px solid $blog_post_highlight_color;
 	
 		a {
-			color: #297BAB;
+			color: $blog_post_link_color;
 		}
 
 		/*
@@ -32,7 +33,7 @@ body {
 		 */
 		header.blog-item-p-card__header,
 		div.blog-item-p-card__content {
-			border-bottom: 1px dotted #CDCDCD;
+			border-bottom: 1px dotted $blog_post_rule_color;
 			padding-bottom: 1rem;
 			margin-bottom: 1rem;
 		}
