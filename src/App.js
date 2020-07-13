@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import moment from 'moment';
 import parse from 'html-react-parser'
@@ -53,25 +52,25 @@ class BlogPosts extends React.Component {
 
   render() {
     return (
-      <div class="row u-equal-height">
+      <div className="row u-equal-height">
         {this.state.posts.map(post => 
-          <div class="col-4 p-card--highlighted blog-item-p-card" key="{post.id}">
-              <header class="blog-item-p-card__header">
-                <h5 class="blog-item-p-card__category p-muted-heading u-no-margin--bottom u-no-margin--top">Cloud and Server</h5>
+          <div className="col-4 p-card--highlighted blog-item-p-card" key={post.id.toString()}>
+              <header className="blog-item-p-card__header">
+                <h5 className="blog-item-p-card__category p-muted-heading u-no-margin--bottom u-no-margin--top">Cloud and Server</h5>
               </header>
-              <div class="blog-item-p-card__content">
+              <div className="blog-item-p-card__content">
                 <a href={post.link}>
-                  <img src={post.thumbnail.image} alt={post.thumbnail.alt_text} class="blog-item-p-card__thumbnail"/>
+                  <img src={post.thumbnail.image} alt={post.thumbnail.alt_text} className="blog-item-p-card__thumbnail"/>
                 </a>
-                <h3 class="p-card__title blog-item-p-card__heading">
+                <h3 className="p-card__title blog-item-p-card__heading">
                   <a href={post.link}>{post.title}</a>
                 </h3>
-                <p class="u-no-margin--top blog-item-p-card__info u-no-padding--top">
+                <p className="u-no-margin--top blog-item-p-card__info u-no-padding--top">
                   <em>By <a href={post.author.link}>{post.author.name}</a> {post.date}</em>
                 </p>
               </div>
-              <footer class="blog-item-p-card__footer">
-                <p class="blog-item-p-card__type">Article</p>
+              <footer className="blog-item-p-card__footer">
+                <p className="blog-item-p-card__type">Article</p>
               </footer>
           </div>
         )}
@@ -80,9 +79,5 @@ class BlogPosts extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <BlogPosts/>,
-  document.getElementById('root')
-);
 
 export default BlogPosts;
